@@ -1,4 +1,4 @@
-const board = ["", "", "", "", "", "", "", "", ""];
+let board = ["", "", "", "", "", "", "", "", ""];
 const humanPlayer = "X";
 const computerPlayer = "O";
 const winningCombinations = [  
@@ -11,6 +11,23 @@ const winningCombinations = [
     [0, 4, 8],
     [2, 4, 6],
 ];
+let humanScore = 0;
+let computerScore = 0;
+let drawScore = 0;
+
+function updateScore() {
+    document.getElementById("human-score").textContent = humanScore;
+    document.getElementById("computer-score").textContent = computerScore;
+    document.getElementById("draw-score").textContent = drawScore;
+  }
+
+const newGameButton = document.getElementById("new-game");
+
+newGameButton.addEventListener("click", function () {
+  board = ["", "", "", "", "", "", "", "", ""];
+  currentPlayer = humanPlayer;
+  document.querySelectorAll(".game-cell").forEach((cell) => (cell.textContent = ""));
+});
 
 function checkForWin(player) {
   for (let i = 0; i < winningCombinations.length; i++) {
@@ -101,6 +118,8 @@ function handleClick(event) {
 
   if (checkForWin(humanPlayer)) {
     alert(`You win!`);
+    humanScore++;
+    updateScore();
     return;
   }
 
@@ -116,11 +135,15 @@ function handleClick(event) {
 
   if (checkForWin(computerPlayer)) {
     alert(`Computer wins!`);
+    computerScore++;
+    updateScore();
     return;
   }
 
   if (checkForDraw()) {
     alert("It's a draw!");
+    drawScore++;
+    updateScore();
     return;
   }
 }
@@ -128,9 +151,12 @@ function handleClick(event) {
 
   
 
-document.querySelectorAll("button").forEach((button) => {
-  button.addEventListener("click", handleClick);
-});
+document.querySelectorAll(".game-cell").forEach((button) => {
+    button.addEventListener("click", handleClick);
+  });
+  
+
+
 
 // const board = ["", "", "", "", "", "", "", "", ""];
 // let currentPlayer = "X";

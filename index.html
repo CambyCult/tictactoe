@@ -10,16 +10,28 @@
 </head>
 <body>
     <div class="board-container">
+        <div class="score-container">
+            <div id="score">
+                <p>Human: <span id="human-score">0</span></p>
+                <p>Computer: <span id="computer-score">0</span></p>
+                <p>Draws: <span id="draw-score">0</span></p>
+        </div>
+
+        </div>
         <div class="board">
-        <button id="0"></button>
-        <button id="1"></button>
-        <button id="2"></button>
-        <button id="3"></button>
-        <button id="4"></button>
-        <button id="5"></button>
-        <button id="6"></button>
-        <button id="7"></button>
-        <button id="8"></button>
+        <button class="game-cell" id="0"></button>
+        <button class="game-cell" id="1"></button>
+        <button class="game-cell" id="2"></button>
+        <button class="game-cell" id="3"></button>
+        <button class="game-cell" id="4"></button>
+        <button class="game-cell" id="5"></button>
+        <button class="game-cell" id="6"></button>
+        <button class="game-cell" id="7"></button>
+        <button class="game-cell" id="8"></button>
+        </div>
+
+        <div class="options">
+            <button id="new-game">New Game</button>
         </div>
     </div>
   </body>

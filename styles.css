@@ -1,5 +1,8 @@
 *{
     margin:0;
+    overflow:hidden;
+    color: #fff;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 .board-container{
     height:100vh;
@@ -8,6 +11,19 @@
     display:flex;
     justify-content:center;
     align-items:center;
+}
+
+.score-container{
+    position:absolute;
+    top:0;
+    left:0;
+    height: 10vh;
+    width:100vw;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background:transparent;
 }
 .board {
     height:610px;
@@ -25,5 +41,26 @@
     font-size: 100px;
     font-weight: bold;
     padding: 10px;
+    background-color:#afafaf;
   }
   
+
+.options{
+    position:absolute;
+    bottom:0;
+    left:0;
+    height: 10vh;
+    width:100vw;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background:transparent;
+}
+
+#new-game{
+    height:100px;
+    width:100px;
+    background-color:#444;
+    font-size:24px;
+}
